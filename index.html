@@ -17,11 +17,20 @@
         
     <!-- Event snippet for Comprar Pneu conversion page -->
     <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
       gtag('event', 'conversion', {
           'send_to': 'AW-16456630608/mLVXCLTPlfcbENCCkac9',
           'value': 400.0,
-          'currency': 'BRL'
+          'currency': 'BRL',
+          'event_callback': callback
       });
+      return false;
+    }
     </script>
     <style>
         * {
@@ -268,7 +277,7 @@
                 🛒 Ver Oferta no Mercado Livre
             </a>
             
-            <a href="https://mercadolivre.com/sec/1BQUUTg" class="cta-button" target="_blank" style="background: #FFE600; color: #333;">
+            <a href="https://mercadolivre.com/sec/1BQUUTg" class="cta-button" target="_blank" style="background: #FFE600; color: #333;" onclick="return gtag_rep onclick="return gtag_report_conversion('https://mercadolivre.com/sec/1BQUUTg');">
                 ⚡ Comprar Agora
             </a>
             
